@@ -46,9 +46,16 @@ const fetchIssues = () => {
 
     issuesList.innerHTML +=   `<div class="well">
                               <h6>Issue ID: ${id} </h6>
-                              <p><span class="label label-info"> ${status} </span></p>
+                              <p>
                               ${status === "Closed" ? `
-                                 <h3><s> ${description} </s></h3>
+                                  <span class="label label-success"> ${status} </span>
+                                `:
+                                `
+                                  <span class="label label-info"> ${status} </span>
+                                `}
+                              </p>
+                              ${status === "Closed" ? `
+                                 <h3><del> ${description} </del></h3>
                                 `: 
                                 `
                                   <h3> ${description} </h3>
